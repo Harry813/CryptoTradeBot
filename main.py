@@ -9,7 +9,18 @@ from keras.models import Sequential, load_model
 from keras.layers import LSTM, GRU, Conv1D, Dense, Dropout, Flatten, MaxPooling1D
 from keras.callbacks import ModelCheckpoint
 from config import *
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
+import ccxt
+import pandas as pd
+import numpy as np
+import time
+from keras.models import load_model
+from keras.models import Sequential
+from keras.layers import Dense, LSTM, GRU, Conv1D, MaxPooling1D, GlobalMaxPooling1D
+from keras.optimizers import Adam
+from sklearn.preprocessing import MinMaxScaler
 
 API_KEY = BINANCE_API_KEY
 API_SECRET = BINANCE_SECRET_KEY
